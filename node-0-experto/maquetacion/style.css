@@ -1,0 +1,64 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: auto-fit, repeat(12,1fr);
+    background-color: black;
+    text-align: center;
+    gap: 10px;
+}
+
+.navbar {
+    grid-column: 1/13;
+    background: red;
+    height: 50px;
+}
+
+.info {
+    grid-column: 1/7;
+    background: blue;
+    height: 50vh;
+}
+
+.img-profile{
+    grid-column: 7/13;
+    background: green;
+    height: 50vh;
+}
+
+.textos {
+    grid-column: 2/12;
+    color: white;
+}
+
+.skills, .projects {
+    grid-column: 2/11;
+    background: yellow;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 5px;
+    padding: 5px 0;
+}
+
+.skill1,.project1 {
+    width: 200px;
+    aspect-ratio: 1/1;
+    background: aqua;
+}
+
+.skill2,.project2 {
+    width: 200px;
+    aspect-ratio: 1/1;
+    background: rgb(126, 174, 247);
+}
+
+.skill3,.project3 {
+    width: 200px;
+    aspect-ratio: 1/1;
+    background: rgb(254, 148, 82);
+}

@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: grid;
+    height: 600px;
+    width: 800px;
+    grid-gap: 10px;
+    grid-template-columns: repeat(4,1fr);
+    /* Alienear el contenido */
+    justify-items: center;
+    align-items: start;
+}
+
+[class^="item"] {
+    color: #fff;
+    font-size: 30px;
+    text-align: center;
+}
+
+.item1 {
+    background: #ff0101;
+    /* Alinear solamente el item */
+    justify-self: center;
+    align-self: center;
+}
+
+.item2 {
+    background: #e3f023;
+}
+
+.item3 {
+    background: #251ac1;
+    order: -1;
+}
+
+.item4 {
+    background: #27de83;
+}

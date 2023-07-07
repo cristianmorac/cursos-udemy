@@ -1,0 +1,16 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img{
+    width: 400px;
+}
+
+
+@keyframes mover{
+    0%{
+        transform: translate(100%);
+    }
+}

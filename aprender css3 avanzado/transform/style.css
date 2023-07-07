@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+  }
+  
+  img{
+    width:300px;
+    animation: moverDerecha 1s;
+  }
+  
+  @keyframes moverDerecha{
+    from{
+      transform: translate(0);
+    }
+    to{
+      transform: translate(100%);
+    }
+  }

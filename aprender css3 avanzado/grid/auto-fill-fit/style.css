@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: grid;
+    height: 200px;
+    width: 100%;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+}
+
+.container2 {
+    display: grid;
+    height: 200px;
+    width: 100%;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(100px,1fr));
+}
+
+[class^="item"] {
+    color: #fff;
+    font-size: 30px;
+    text-align: center;
+}
+
+.item1 {
+    background: #ff0101;
+}
+
+.item2 {
+    background: #e3f023;
+}
+
+.item3 {
+    background: #251ac1;
+}

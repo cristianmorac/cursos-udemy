@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+.content{
+    position: relative;
+    border: solid red;
+    width: 700px;
+    height: 900px;
+}
+
+.caja{
+    background: coral;
+    width: 200px;
+    aspect-ratio: 1/1;
+    position: relative;
+    background-color: aqua;
+    
+}
+
+.caja ul li, p {
+    padding: 5px 10px;
+    color: black;
+    font-size: 1.5rem;
+}
+
+.caja p{
+    font-size: 15px;
+}
+
+.caja:nth-child(2){
+    position: absolute;
+    top: calc(50% - 200px);
+    left: 250PX;
+    background: red;
+}
+
+.caja:nth-child(3){
+    position: fixed;
+    left:470px;
+    top: calc(30% - 180px);
+    background: rgb(245, 242, 146);
+}
+
+.caja:nth-child(4){
+    position: sticky;
+    left:470px;
+    top: 200px;
+    right: 300px;
+    left: 3px;
+    bottom: 3px;
+    background-color: blueviolet;
+}

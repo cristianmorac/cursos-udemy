@@ -1,0 +1,58 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Verdana;
+}
+
+.contenedor-foto{
+    width: 200px;
+    margin: 40px auto;
+    position: relative;
+    transition: transform 2s;
+    overflow: hidden;
+    box-shadow: 0 0 5px rgba(0,0,0, .8);
+    border-radius: 10px;
+}
+
+/* Lo devuelve a su posición original */
+.contenedor-foto:hover .hover{
+    transform: translate(0) rotate(0);
+}
+
+
+.contenedor-foto img{
+    width: 100%;
+    height: 100%;
+    /* no se desborde */
+    vertical-align: top;
+    transition: transform 1s;
+    object-fit: cover;
+}
+
+.contenedor-foto:hover img{
+    /* Aumentar el tamaño a 1.4 */
+    transform: scale(1.4);
+}
+
+.hover{
+    position: absolute;
+    bottom: 0;
+    background: rgba(31, 78, 165,0.705);
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding: 10px 0;
+    /* Transladar en X and Y  y rotar 90 grados*/
+    transform: translate(100%,100%) rotate(180deg);
+    transition: transform 1s;
+}
+
+h1, p{
+    margin-bottom: 10px;
+    padding: 5px;
+}
