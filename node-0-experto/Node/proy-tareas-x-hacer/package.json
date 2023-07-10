@@ -1,0 +1,18 @@
+{
+  "name": "tareas-hacer",
+  "version": "1.0.0",
+  "description": "app en consola de tareas por hacer",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "tareas",
+    "pendientes"
+  ],
+  "author": "Cristian Mora",
+  "license": "ISC",
+  "dependencies": {
+    "colors": "^1.4.0"
+  }
+}
