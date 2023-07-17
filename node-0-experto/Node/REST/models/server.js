@@ -1,4 +1,5 @@
 const express = require('express')
+const cors = require('cors')
 
 class Server {
 
@@ -7,6 +8,8 @@ class Server {
         this.app = express()
         // visible el puerto
         this.port = process.env.PORT
+        // visible las rutas
+        this.pathUser = '/api/user'
         // middleware
         this.middlewares();
         // ejecutar el metodo
@@ -19,15 +22,20 @@ class Server {
     */
 
     middlewares() {
+
+        //? CORS: ver documentación
+        this.app.use( cors() )
+        // Lectura y parseo de lo que se envia en el body
+        this.app.use( express.json() )
         // Directorio público
         this.app.use( express.static('public') );
     }
 
     // rutas
     routes() {
-        this.app.get('/api', (req,res) => {
-            res.send('Hello World')
-        })
+        
+        // configurar rutas de routes
+        this.app.use(this.pathUser, require('../routes/user'))
     }
     // correr el puerto
     listen() {
