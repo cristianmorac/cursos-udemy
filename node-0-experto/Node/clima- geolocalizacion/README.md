@@ -17,3 +17,8 @@ https://docs.mapbox.com/api/search/geocoding/
 ## opciones para manejar url
 request https://www.npmjs.com/package/request Deprecated!
 fetch https://www.npmjs.com/package/fetch // faltan caacteristicas
+
+
+## Ejemplos variables de entorno
+MAPBOX_KEY=pk.eyJ1Ijoia2xlcml0aCIsImEiOiJja2tvZHh4Y3YwMDhnMnBvY3ozbHUxdGJvIn0.3zptKSSxJrM5VmfjnkKMYA
+OPENWEATHER_KEY=f369635965b00ad16ced5da4da4b9f3b
