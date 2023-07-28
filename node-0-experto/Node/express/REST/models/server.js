@@ -1,6 +1,8 @@
 const express = require('express')
 const cors = require('cors')
 
+const { dbConnection } = require('../database/config')
+
 class Server {
 
     constructor() {
@@ -9,11 +11,21 @@ class Server {
         // visible el puerto
         this.port = process.env.PORT
         // visible las rutas
-        this.pathUser = '/api/user'
+        this.pathUser = '/api/user';
+        this.authPath = '/api/auth'
+
+        // connection db
+        this.connectionDB();
+
         // middleware
         this.middlewares();
         // ejecutar el metodo
         this.routes();
+    }
+
+    // conexión base de datos
+    async connectionDB() {
+        await dbConnection()
     }
 
     /* middlewares
@@ -35,6 +47,7 @@ class Server {
     routes() {
         
         // configurar rutas de routes
+        this.app.use(this.authPath, require('../routes/auth'))
         this.app.use(this.pathUser, require('../routes/user'))
     }
     // correr el puerto
