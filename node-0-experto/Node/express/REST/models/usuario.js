@@ -1,26 +1,19 @@
-/* modelo del usuario
-{
-    nombre: String, correo: String, password: String,
-    img, rol: String, estado: boolean, google:Boolean
-}
-*/
 
-// Creación del modelo
-const { Schema, model } =require('mongoose');
-const UsuarioShema = Schema({
+const { Schema, model } = require('mongoose');
+
+const UsuarioSchema = Schema({
     nombre: {
         type: String,
-        required: [true, 'Nombre es obligatorio']
+        required: [true, 'El nombre es obligatorio']
     },
     correo: {
         type: String,
-        required: [true, 'Correo es obligatorio'],
-        // unico, no acepta duplicados
+        required: [true, 'El correo es obligatorio'],
         unique: true
     },
     password: {
         type: String,
-        required: [true, 'Contraseña es obligatorio'],
+        required: [true, 'La contraseña es obligatoria'],
     },
     img: {
         type: String,
@@ -28,7 +21,8 @@ const UsuarioShema = Schema({
     rol: {
         type: String,
         required: true,
-        enum: ['ADMIN_ROLE','USER_ROLE']
+        default: 'USER_ROLE',
+        emun: ['ADMIN_ROLE', 'USER_ROLE']
     },
     estado: {
         type: Boolean,
@@ -37,14 +31,15 @@ const UsuarioShema = Schema({
     google: {
         type: Boolean,
         default: false
-    }
+    },
 });
 
-// tiene que ser una función normal, con flecha no funciona
-UsuarioShema.methods.toJSON = function() {
-    const { __v, password, _id, ...usuario } = this.toObject();
+
+
+UsuarioSchema.methods.toJSON = function() {
+    const { __v, password, _id, ...usuario  } = this.toObject();
     usuario.uid = _id;
     return usuario;
 }
 
-module.exports = model( 'Usuario', UsuarioShema );
+module.exports = model( 'Usuario', UsuarioSchema );
